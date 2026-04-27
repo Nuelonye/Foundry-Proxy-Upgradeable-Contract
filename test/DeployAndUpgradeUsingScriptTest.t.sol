@@ -35,7 +35,7 @@ contract DeployAndUpgradeUsingScriptTest is Test {
         BoxV2 box2 = new BoxV2();
 
         vm.prank(BoxV1(proxyAddress).owner());
-        // Since prank and broadcasting aren't compatible, first transfer ownership before running script funciton
+        // Since prank and broadcasting aren't compatible, first transfer ownership to FOUNDRY DEFAULT CALLER before running script funciton
         BoxV1(proxyAddress).transferOwnership(msg.sender);
 
         upgrader.upgradeBox(proxyAddress, address(box2));
