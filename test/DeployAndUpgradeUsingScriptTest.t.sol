@@ -28,7 +28,7 @@ contract DeployAndUpgradeUsingScriptTest is Test {
     }
 
     function testUpgradeToBoxV2Works() public {
-        console.log("Owner: ", BoxV1(proxyAddress).owner());
+        console.log("Owner: ", BoxV1(proxyAddress).owner()); // address(this)
         console.log("Caller: ", msg.sender);
 
         // Deploy new Implementation
